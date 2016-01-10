@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Server.Model;
+using Server.View;
 
 namespace Server
 {
@@ -16,7 +18,12 @@ namespace Server
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            var model = new ConcreteModel();
+            var view = new MainFormView();
+            var presenter = new Presenter.Presenter(model, view);
+
+            Application.Run(view);
         }
     }
 }
