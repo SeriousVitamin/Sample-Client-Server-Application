@@ -19,8 +19,8 @@ namespace Server
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var model = new ConcreteModel();
-            var view = new MainFormView();
+            var model = new Model.Server();
+            var view = new MainFormServerView();
             var presenter = new Presenter.Presenter(model, view);
 
             Application.Run(view);

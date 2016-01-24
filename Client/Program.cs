@@ -16,7 +16,13 @@ namespace Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            var model = new Model.ConcreteModel();
+            var view = new View.MainFormClientView();
+
+            var presenter = new Presenter.Presenter(model, view);
+
+            Application.Run(view);
         }
     }
 }

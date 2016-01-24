@@ -18,7 +18,7 @@ namespace Server.Presenter
             _model = model;
             _view = view;
 
-            _view.StartServer += (string address, int port) => { throw new NotImplementedException();};
+            _view.StartServer += (address, port) => _model.StartServer(address, port);
             _view.CloseServer += () => { throw new NotImplementedException(); };
         }
 

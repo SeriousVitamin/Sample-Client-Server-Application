@@ -1,6 +1,6 @@
-﻿namespace Server.View
+﻿namespace Client.View
 {
-    partial class MainFormView
+    partial class MainFormClientView
     {
         /// <summary>
         /// Required designer variable.
@@ -34,12 +34,12 @@
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gbParameters = new System.Windows.Forms.GroupBox();
+            this.mtbAddress = new System.Windows.Forms.MaskedTextBox();
             this.labelPort = new System.Windows.Forms.Label();
             this.labelAddress = new System.Windows.Forms.Label();
             this.tbPort = new System.Windows.Forms.TextBox();
             this.gbLog = new System.Windows.Forms.GroupBox();
             this.rtbLog = new System.Windows.Forms.RichTextBox();
-            this.mtbAddress = new System.Windows.Forms.MaskedTextBox();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.gbParameters.SuspendLayout();
@@ -53,7 +53,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(324, 24);
-            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // serverToolStripMenuItem
@@ -62,22 +62,20 @@
             this.startToolStripMenuItem,
             this.stopToolStripMenuItem});
             this.serverToolStripMenuItem.Name = "serverToolStripMenuItem";
-            this.serverToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.serverToolStripMenuItem.Text = "Server";
+            this.serverToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.serverToolStripMenuItem.Text = "Client";
             // 
             // startToolStripMenuItem
             // 
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.startToolStripMenuItem.Text = "Start";
-            this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.startToolStripMenuItem.Text = "Connect";
             // 
             // stopToolStripMenuItem
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.stopToolStripMenuItem.Text = "Stop";
-            this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.stopToolStripMenuItem.Text = "Close";
             // 
             // tableLayoutPanel1
             // 
@@ -85,14 +83,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.gbParameters, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.gbLog, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(324, 238);
-            this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.TabIndex = 4;
             // 
             // gbParameters
             // 
@@ -107,6 +105,14 @@
             this.gbParameters.TabIndex = 0;
             this.gbParameters.TabStop = false;
             this.gbParameters.Text = "Parameters";
+            // 
+            // mtbAddress
+            // 
+            this.mtbAddress.Location = new System.Drawing.Point(58, 11);
+            this.mtbAddress.Mask = "###.###.###.###";
+            this.mtbAddress.Name = "mtbAddress";
+            this.mtbAddress.Size = new System.Drawing.Size(175, 20);
+            this.mtbAddress.TabIndex = 0;
             // 
             // labelPort
             // 
@@ -156,25 +162,15 @@
             this.rtbLog.TabIndex = 2;
             this.rtbLog.Text = "";
             // 
-            // mtbAddress
-            // 
-            this.mtbAddress.Location = new System.Drawing.Point(58, 11);
-            this.mtbAddress.Mask = "###.###.###.###";
-            this.mtbAddress.Name = "mtbAddress";
-            this.mtbAddress.Size = new System.Drawing.Size(175, 20);
-            this.mtbAddress.TabIndex = 0;
-            // 
-            // MainFormView
+            // MainFormClientView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(324, 262);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "MainFormView";
-            this.ShowIcon = false;
-            this.Text = "Sample Server";
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Name = "MainFormClientView";
+            this.Text = "MainFormClientView";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -194,11 +190,11 @@
         private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox gbParameters;
+        private System.Windows.Forms.MaskedTextBox mtbAddress;
         private System.Windows.Forms.Label labelPort;
         private System.Windows.Forms.Label labelAddress;
         private System.Windows.Forms.TextBox tbPort;
         private System.Windows.Forms.GroupBox gbLog;
         private System.Windows.Forms.RichTextBox rtbLog;
-        private System.Windows.Forms.MaskedTextBox mtbAddress;
     }
 }
